@@ -1,0 +1,26 @@
+name: watch
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    container:
+      image: golang:latest
+    env:
+      TARGET_URL: https://example.com/
+    steps:
+      - uses: actions/checkout@v2
+      - name: install jq
+        run: |
+          apt-get -y update
+          apt-get -y install jq
+      - run: |
+          go install github.com/yusukebe/rj/cmd/rj@latest
+          go install github.com/yusukebe/t/cmd/t@latest
+      - run: rj ${TARGET_URL} | jq '.code' | t 200
