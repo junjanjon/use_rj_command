@@ -2,7 +2,7 @@
 
 ![workflow badge](https://github.com/junjanjon/use_rj_command/actions/workflows/main.yml/badge.svg)
 
-[GitHub Actions](.github/workflows/main.yml) で [`rj`](https://github.com/yusukebe/rj) コマンド、[`t`] コマンドを利用する。
+[GitHub Actions](.github/workflows/main.yml) で [`rj`](https://github.com/yusukebe/rj) コマンド、[`t`](https://github.com/yusukebe/t) コマンドを利用する。
 
 # 各リポジトリ
 
